@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-gradient: linear-gradient(90deg, rgba(77, 75, 115, 1) 0%, rgba(54, 54, 145, 1) 50%, rgba(55, 127, 140, 1) 100%);
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url('/public/Outfit-SemiBold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Outfit;
+    background: var(--color-gradient);
+    color: white;
+}
