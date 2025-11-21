@@ -26,7 +26,10 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(cookieParser());
 
-app.options('*', cors());
+app.options('*', (req, res) => {
+  res.sendStatus(200);
+});
+
 
 app.use(cors({
   origin: function (origin, callback) {
