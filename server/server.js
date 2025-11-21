@@ -26,10 +26,13 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(cookieParser());
 
-app.options('*', (req, res) => {
-  res.sendStatus(200);
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
 });
-
 
 app.use(cors({
   origin: function (origin, callback) {
