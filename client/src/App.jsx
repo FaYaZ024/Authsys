@@ -1,16 +1,15 @@
 import { useState } from 'react'
 import { Routes , Route } from 'react-router-dom'
-import Home from './assets/pages/Home'
-import Login from './assets/pages/Login'
-import ResetPassword from './assets/pages/ResetPassword'
-import EmailVerify from './assets/pages/EmailVerify'
 import { ToastContainer, toast } from 'react-toastify';
+import Home from './pages/Home'
+import EmailVerify from './pages/EmailVerify';
+import Login from './pages/Login';
+import ResetPassword from './pages/ResetPassword'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <div> 
       <ToastContainer />
       <Routes>
         <Route path='/' element={<Home/>}/>

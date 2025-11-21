@@ -1,5 +1,5 @@
 import React, { useContext,useState } from 'react'
-import { AppContext } from '../../context/appContex'
+import { AppContext } from '../context/appContex'
 
 const Header = () => {
 
