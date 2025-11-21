@@ -11,41 +11,27 @@ const app = express();
 const port = process.env.PORT || 4000
 connectDB();
 
-const allowOrgins = ['http://localhost:5173',
+const allowOrigins = ['http://localhost:5173',
     'https://authsys-git-main-fayaz-ahameds-projects.vercel.app',
     'https://authsys-omega.vercel.app'
 ]
-
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
-
 
 
 app.use(express.json());
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  if (req.method === 'OPTIONS') {
-    res.sendStatus(200);
-  } else {
-    next();
-  }
-});
-
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("CORS blocked: " + origin));
-    }
-  },
-  methods: "GET,POST,PUT,DELETE,OPTIONS",
-  allowedHeaders: "Content-Type,Authorization",
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS blocked: " + origin));
+      }
+    },
+    credentials: true,
+  })
+);
 
 //ApI endpoints
 app.get('/', (req, res) => res.send("API running"));
