@@ -24,7 +24,13 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: allowOrigins,
+    origin: function (origin, callback) {
+      if (!origin || allowOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS blocked: " + origin));
+      }
+    },
     credentials: true,
   })
 );
