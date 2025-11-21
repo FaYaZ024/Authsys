@@ -62,7 +62,7 @@ loggedIn && userData && userData.accVerified && navigate('/')
 
   return (
     <div>
-      <img  onClick={() => navigate('/')} src="/public/logo2.png" alt="LOGO" className='size-13 absolute top-6 left-6 cursor-pointer' />
+      <img  onClick={() => navigate('/')} src="/logo2.png" alt="LOGO" className='size-13 absolute top-6 left-6 cursor-pointer' />
     <div className='flex flex-col items-center justify-center min-h-screen'>
       <form onSubmit={onSubmitHandler} className='bg-slate-900 p-8 rounded-lg shadow-lg w-96 text-sm'>
         <h1 className='text-white text-2xl font-semibold text-center mb-4'>Email Verify OTP</h1>

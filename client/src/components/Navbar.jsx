@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <div className='w-full flex justify-between items-center p-4 sm:p-6'>
-      <img src="/public/logo2.png" alt="LOGO" className='size-13' onClick={( )=> navigate('/')} />
+      <img src="/logo2.png" alt="LOGO" className='size-13' onClick={( )=> navigate('/')} />
       {userData ?
         <div className='w-8 h-8 flex justify-center items-center rounded-full bg-black text-white relative group'>
           {userData.name[0].toUpperCase()}

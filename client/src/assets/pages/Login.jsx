@@ -51,7 +51,7 @@ const Login = () => {
   return (
 
     <div>
-        <img  onClick={() => navigate('/')} src="/public/logo2.png" alt="LOGO" className='size-13 absolute top-6 left-6 cursor-pointer' />
+        <img  onClick={() => navigate('/')} src="/logo2.png" alt="LOGO" className='size-13 absolute top-6 left-6 cursor-pointer' />
     <div className='flex flex-col items-center justify-center min-h-screen px-6 sm:px-0'>
         <div className='bg-slate-900 p-10 rounded-lg shadow-lg w-full sm:w-96 text-indigo-500 text-sm'> 
         
