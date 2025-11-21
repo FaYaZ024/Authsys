@@ -13,6 +13,7 @@ connectDB();
 
 const allowOrgins = ['http://localhost:5173',
     'https://authsys-git-main-fayaz-ahameds-projects.vercel.app',
+    'https://authsys-omega.vercel.app/'
 ]
 
 app.use(express.json());
