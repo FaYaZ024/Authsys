@@ -12,8 +12,7 @@ const port = process.env.PORT || 4000
 connectDB();
 
 const allowOrgins = ['http://localhost:5173',
-    'https://authsys-app.web.app',
-    'https://authsys-app.firebaseapp.com'
+    'https://authsys-git-main-fayaz-ahameds-projects.vercel.app',
 ]
 
 app.use(express.json());
