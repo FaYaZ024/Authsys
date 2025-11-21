@@ -16,16 +16,28 @@ const allowOrgins = ['http://localhost:5173',
     'https://authsys-omega.vercel.app'
 ]
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
+
+
 app.use(express.json());
 app.use(cookieParser());
+
+app.options('*', cors());
+
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS: " + origin));
+      callback(new Error("CORS blocked: " + origin));
     }
   },
+  methods: "GET,POST,PUT,DELETE,OPTIONS",
+  allowedHeaders: "Content-Type,Authorization",
   credentials: true,
 }));
 
